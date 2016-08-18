@@ -1,0 +1,13 @@
+{
+  "name": "asaper-app",
+  "app_id": "d624ddd2",
+  "gulpStartupTasks": [
+    "build-index",
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
