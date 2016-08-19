@@ -4,6 +4,8 @@
   angular
     .module('app', [
       'app.core',
-      'app.login'
+      'app.login',
+      'app.medicContact',
+      'app.phamacyContact'
     ]);
 })();
