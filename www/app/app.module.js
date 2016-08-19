@@ -6,6 +6,7 @@
       'app.core',
       'app.login',
       'app.menu',
-      'app.contact'
+      'app.contact',
+      'app.visit'
     ]);
 })();
