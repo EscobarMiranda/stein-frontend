@@ -5,6 +5,7 @@
     .module('app', [
       'app.core',
       'app.login',
-      'app.menu'
+      'app.menu',
+      'app.contact'
     ]);
 })();
