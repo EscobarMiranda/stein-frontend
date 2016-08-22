@@ -7,6 +7,7 @@
       'app.login',
       'app.menu',
       'app.contact',
-      'app.visit'
+      'app.visit',
+      'app.product'
     ]);
 })();
