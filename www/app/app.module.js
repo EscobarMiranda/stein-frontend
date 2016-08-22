@@ -3,11 +3,12 @@
 
   angular
     .module('app', [
+      'app.book',
+      'app.contact',
       'app.core',
       'app.login',
       'app.menu',
-      'app.contact',
-      'app.visit',
-      'app.product'
+      'app.product',
+      'app.visit'
     ]);
 })();
