@@ -1,0 +1,13 @@
+{
+  "name": "stein-app",
+  "app_id": "d4e410e9",
+  "gulpStartupTasks": [
+    "build-index",
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

@@ -43,7 +43,8 @@ gulp.task('build-index', function() {
                           './www/app/core/core.module.js',
                           './www/app/**/*.module.js',
                           './www/app/**/*.js',
-                          './www/css/**/*.css'], {read: false});
+                          './www/css/**/*.css',
+                          './www/app/**/*.css'], {read: false});
 
   return target.pipe(inject(sources, {relative: true}))
       .pipe(gulp.dest('./www'));
