@@ -1,0 +1,14 @@
+<ion-view title="Ubicación Doctor">
+  <ion-content padding="true" class="has-header">
+    <h4 class="centered">{{vm.client.name}} {{vm.client.lastName}}</h4>
+    <div>
+      <p class="centered">{{vm.client.address1}}</p>
+    </div>
+    <div>
+      <div id="map" lat="{{vm.client.latitude}}" lng="{{vm.client.longitude}}" zoom="8" map></div>
+    </div>
+    <a href="http://waze.to/?ll={{vm.client.latitude}},{{vm.client.longitude}}&navigate=yes" class="button button-calm button-small button-block">Abrir en Waze</a>
+    <div class="spacer"></div>
+    <a ui-sref="consultarContactoMedico" class="button button-stable  button-block">Ok</a>
+  </ion-content>
+</ion-view>

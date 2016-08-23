@@ -1,0 +1,49 @@
+<ion-view title="Consultar Contacto Medico">
+  <ion-content padding="true" class="has-header">
+    <h3 class="centered">{{vm.client.name}} {{vm.client.lastName}}</h3>
+    <div class="spacer"></div>
+    <div>
+      <p><strong>Especialidad:</strong>{{vm.client.speciality}}</p>
+    </div>
+    <div>
+      <p><strong>Potencial:</strong>{{vm.client.potential}}</p>
+    </div>
+    <div>
+      <p><strong>Adopción:</strong>{{vm.client.adoption}}</p>
+    </div>
+    <div>
+      <p><strong>Frecuencia:</strong>1</p>
+    </div>
+    <a ui-sref="contact/location" class="button button-stable button-small button-block">Ubicación</a>
+    <div>
+      <p><strong>Provincia:</strong> {{vm.client.province}}</p>
+    </div>
+    <div>
+      <p><strong>Zona:</strong> {{vm.client.zone}}</p>
+    </div>
+    <div>
+      <p><strong>Dirección 1:</strong> {{vm.client.address1}}</p>
+    </div>
+    <div>
+      <p><strong>Dirección 2:</strong> {{vm.client.address2}}</p>
+    </div>
+    <ion-list>
+      <ion-item class="item-divider"></ion-item>
+    </ion-list>
+    <div>
+      <p><strong>Email:</strong> {{vm.client.email}}</p>
+    </div>
+    <div>
+      <p><strong>Télefono 1:</strong> {{vm.client.phone1}}</p>
+    </div>
+    <div>
+      <p><strong>Télefono 2:</strong> {{vm.client.phone2}}</p>
+    </div>
+    <ion-list>
+      <ion-item class="item-divider"></ion-item>
+      <ion-item class="item-icon-right" ui-sref="contact/comment({idClient: vm.client.idClient})">Comentarios
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

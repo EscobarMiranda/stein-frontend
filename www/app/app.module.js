@@ -9,7 +9,9 @@
       'app.login',
       'app.menu',
       'app.product',
+      'app.resource',
       'app.segmentation',
+      'app.service',
       'app.visit'
     ]);
 })();
