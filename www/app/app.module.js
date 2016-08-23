@@ -9,6 +9,7 @@
       'app.login',
       'app.menu',
       'app.product',
+      'app.segmentation',
       'app.visit'
     ]);
 })();
