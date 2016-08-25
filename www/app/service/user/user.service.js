@@ -35,7 +35,7 @@
       return JSON.parse(sessionStorage.getItem("CurrentUser"));
     }
 
-    function clearCurrentUser(argument) {
+    function clearCurrentUser() {
       setCurrentUser({});
     }
 

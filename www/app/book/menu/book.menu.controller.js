@@ -24,9 +24,9 @@
 
     function getClientTypes() {
       ClientService.getClientTypes()
-        .then(function(clientTypesData){
-          vm.clientTypes = clientTypesData.data;
-        })
+      .then(function(clientTypesData){
+        vm.clientTypes = clientTypesData.data;
+      })
     }
 
     function setUserInfo() {

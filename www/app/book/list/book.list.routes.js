@@ -9,11 +9,11 @@
   function routesConfiguration($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('book/list', {
-        url: '/book/list/:idUser/:idClientType',
-        templateUrl: 'app/book/list/list.html',
-        controller: 'BookListCtrl as vm'
-      });
+    .state('book/list', {
+      url: '/book/list/:idUser/:idClientType',
+      templateUrl: 'app/book/list/list.html',
+      controller: 'BookListCtrl as vm'
+    });
 
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "stein-app",
-  "app_id": "d4e410e9",
+  "app_id": "ed969949",
   "gulpStartupTasks": [
     "build-index",
     "sass",

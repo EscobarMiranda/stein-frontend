@@ -15,6 +15,9 @@
     this.getClients = getClients;
     this.setActualClient = setActualClient;
     this.getActualClient = getActualClient;
+    this.setCurrentClient = setCurrentClient;
+    this.getCurrentClient = getCurrentClient;
+    this.clearCurrentClient = clearCurrentClient;
     this.actualClient = {};
 
     function getClientTypes() {
@@ -59,6 +62,18 @@
 
     function getActualClient() {
       return this.actualClient;
+    }
+
+    function setCurrentClient(client) {
+      localStorage.setItem("CurrentClient", JSON.stringify(client));
+    }
+
+    function getCurrentClient() {
+      return JSON.parse(localStorage.getItem("CurrentClient"));
+    }
+
+    function clearCurrentClient(argument) {
+      setCurrentUser({});
     }
 
   }

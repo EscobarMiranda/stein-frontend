@@ -9,11 +9,11 @@
   function routesConfiguration($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('book', {
-        url: '/book',
-        templateUrl: 'app/book/menu/menu.html',
-        controller: 'BookCtrl as vm'
-      });
+    .state('book', {
+      url: '/book',
+      templateUrl: 'app/book/menu/menu.html',
+      controller: 'BookCtrl as vm'
+    });
 
   }
 

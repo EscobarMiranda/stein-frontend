@@ -27,16 +27,16 @@
 
     function getFrequency() {
       BookService.getFrequencyByUser(vm.param)
-        .then(function(visitsData){
-          vm.visits = visitsData.data;
-        })
+      .then(function(visitsData){
+        vm.visits = visitsData.data;
+      })
     }
 
     function getUser() {
       UserService.getUser(vm.param)
-        .then(function(userData){
-          vm.user = userData.data;
-        })
+      .then(function(userData){
+        vm.user = userData.data;
+      })
     }
 
   }
