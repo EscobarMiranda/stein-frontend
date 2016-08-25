@@ -1,0 +1,10 @@
+<ion-view title="Nueva Visita">
+  <ion-content padding="true" class="has-header">
+  <ion-list>
+      <!-- TODO: generate list with clientTypes service from WS and use dynamic ids instead of {idUser:2,idClientType:1} -->
+      <ion-item ng-repeat="clientType in vm.clientTypes" class="item-icon-right" ui-sref="visit/list({idClientType:clientType.idClientType})">{{clientType.name}}
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -5,12 +5,15 @@
     .module('app.service')
     .service('UserService', UserService);
 
-  UserService.$inject = ['$http', 'RESOURCE'];
+  UserService.$inject = ['$http', 'RESOURCE', '$window'];
 
   /* @ngInject */
-  function UserService($http, RESOURCE) {
+  function UserService($http, RESOURCE, $window) {
 
     this.getUser = getUser;
+    this.setCurrentUser = setCurrentUser;
+    this.getCurrentUser = getCurrentUser;
+    this.clearCurrentUser = clearCurrentUser;
 
     function getUser(user) {
       var request = {
@@ -22,6 +25,18 @@
       };
 
       return $http(request);
+    }
+
+    function setCurrentUser(user) {
+      localStorage.setItem("CurrentUser", JSON.stringify(user));
+    }
+
+    function getCurrentUser() {
+      return JSON.parse(localStorage.getItem("CurrentUser"));
+    }
+
+    function clearCurrentUser(argument) {
+      setCurrentUser({});
     }
 
   }
