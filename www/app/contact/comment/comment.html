@@ -1,0 +1,9 @@
+<ion-view title="Comentarios">
+  <ion-content padding="true" class="has-header">
+    <div class="item item-body">
+      <div>
+        <p ng-repeat="visit in vm.visits"><strong>{{visit.date | date: "dd.MM.y"}}:</strong> {{visit.Reaction.description}} - {{visit.comment}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
