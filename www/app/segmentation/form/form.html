@@ -1,0 +1,19 @@
+<ion-view title="Encuesta Clientes">
+  <ion-content padding="true" class="has-header">
+    <h3 class="centered">{{vm.client.name}} {{vm.client.lastName}}</h3>
+    <ul class="unstyled">
+      <li ng-repeat="question in vm.questionList">
+        <div class="spacer spacer-height"></div>
+        <label class="item item-divider" for="answer">{{question.question}}</label>
+        <ul class="unstyled" id="quest_{{question.idQuestion}}"">
+          <li ng-repeat="option in question.Options">
+            <label for="quest_{{question.idQuestion}}_answer_{{option.idOption}}">
+            <ion-radio id="quest_{{question.idQuestion}}_answer_{{option.idOption}}" ng-model="vm.answers[question.idQuestion]" value="{{option.idOption}}" name="quest_{{question.idQuestion}}_answers">{{option.description}}</ion-radio>
+            </label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <button class="button button-stable button-block" ng-click="vm.saveAnswers()">Enviar Respuestas</button>
+  </ion-content>
+</ion-view>
