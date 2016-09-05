@@ -5,30 +5,30 @@
     .module('app.book')
     .controller('BookListCtrl', BookListCtrl);
 
-  BookListCtrl.$inject = ['ClientService', 'UserService', 'VisitService', '$stateParams'];
+  BookListCtrl.$inject = ['BookService', 'UserService', '$stateParams'];
 
   /* @ngInject */
-  function BookListCtrl(ClientService, UserService, VisitService, $stateParams) {
+  function BookListCtrl(BookService, UserService, $stateParams) {
 
     var vm = this;
     vm.param = {};
     vm.param.idUser = $stateParams.idUser;
     vm.param.idClientType = $stateParams.idClientType;
     vm.param.month = new Date().getMonth() + 1 ;
-    vm.clients = [];
+    vm.visits = [];
 
     activate();
-    getClients();
+    getFrequency();
     getUser();
 
     function activate() {
       
     }
 
-    function getClients() {
-      VisitService.getFrequencyByUser(vm.param)
-        .then(function(clientsData){
-          vm.clients = clientsData.data;
+    function getFrequency() {
+      BookService.getFrequencyByUser(vm.param)
+        .then(function(visitsData){
+          vm.visits = visitsData.data;
         })
     }
 
