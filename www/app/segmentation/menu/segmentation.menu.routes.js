@@ -11,12 +11,7 @@
     $stateProvider
       .state('segmentation', {
         url: '/segmentation',
-        templateUrl: 'app/segmentation/menu.html',
-        controller: 'SegmentationCtrl as vm'
-      })
-      .state('segmentation/form', {
-        url: '/segmentation/form',
-        templateUrl: 'app/segmentation/form.html',
+        templateUrl: 'app/segmentation/menu/menu.html',
         controller: 'SegmentationCtrl as vm'
       });
 
