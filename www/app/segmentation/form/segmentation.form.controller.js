@@ -41,7 +41,6 @@
     }
 
     function saveAnswers() {
-      console.log(vm.answers);
       AnswerService.saveAnswers(AnswerService.buildAnswers(vm.client.idClient, vm.answers))
       .then(function(data) {
         vm.answers = {};
