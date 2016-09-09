@@ -1,7 +1,7 @@
 <ion-view title="Libro de Visitas">
   <ion-content padding="true" class="has-header">
     <ion-list>
-      <ion-item ng-repeat="clientType in vm.clientTypes" class="item-icon-right" ui-sref="book/list({idUser:2,idClientType:clientType.idClientType})">{{clientType.name}}
+      <ion-item ng-repeat="clientType in vm.clientTypes" class="item-icon-right" ui-sref="book/list({idUser:vm.userInfo.idUser,idClientType:clientType.idClientType})">{{clientType.name}}
         <i class="icon ion-ios-arrow-right"></i>
     </ion-list>
   </ion-content>

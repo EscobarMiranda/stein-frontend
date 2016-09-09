@@ -10,7 +10,21 @@
   /* @ngInject */
   function LoginService($http, RESOURCE) {
 
+    this.login = login;
     this.changePassword = changePassword;
+
+    function login(userCredentials) {
+      var request = {
+        method: 'POST',
+        url: RESOURCE.API_URL + 'Login',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: userCredentials
+      };
+
+      return $http(request);
+    }
 
     function changePassword(data) {
       var request = {
