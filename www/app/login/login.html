@@ -9,19 +9,19 @@
       <ion-list id="login-list">
         <label class="item item-input " id="country">
           <span class="input-label">País</span>
-          <input type="text" placeholder="">
+          <input ng-model="vm.userCredentials.country" type="text" placeholder="">
         </label>
         <label class="item item-input " id="username">
-          <span class="input-label">Nombre</span>
-          <input type="text" placeholder="">
+          <span class="input-label">Usuario</span>
+          <input ng-model="vm.userCredentials.username" type="text" placeholder="">
         </label>
         <label class="item item-input " id="password">
           <span class="input-label">Contraseña</span>
-          <input type="password" placeholder="">
+          <input ng-model="vm.userCredentials.password" type="password" placeholder="">
         </label>
       </ion-list>
       <div class="spacer spacer-height"></div>
-      <a ui-sref="menu" id="login-button" class="button button-stable  button-block">Iniciar sesión</a>
+      <a ng-click="vm.login()" id="login-button" class="button button-stable  button-block">Iniciar sesión</a>
     </form>
   </ion-content>
 </ion-view>

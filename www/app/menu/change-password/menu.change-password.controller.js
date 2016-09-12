@@ -5,14 +5,13 @@
     .module('app.menu')
     .controller('MenuChangePasswordCtrl', MenuChangePasswordCtrl);
 
-  MenuChangePasswordCtrl.$inject = ['LoginService', '$ionicPopup', '$state', '$stateParams'];
+  MenuChangePasswordCtrl.$inject = ['LoginService', 'UserService', '$ionicPopup', '$state', '$stateParams'];
 
   /* @ngInject */
-  function MenuChangePasswordCtrl(LoginService, $ionicPopup, $state, $stateParams) {
+  function MenuChangePasswordCtrl(LoginService, UserService, $ionicPopup, $state, $stateParams) {
 
     var vm = this;
     vm.userData = {}; // Contains required information to change user password (username, password, newPassword)
-    vm.userData.username = "jperez"; // TODO: obtain from User service
     vm.changePassword = changePassword;
 
     activate();
@@ -22,15 +21,16 @@
     }
 
     function changePassword() {
+      vm.userData.username = UserService.getCurrentUser().username;
       LoginService.changePassword(vm.userData)
-      .then(function(data) {
-        vm.userData = {};
-        showAlert('Éxito', 'Contraseña actualizada exitosamente', true);
-      })
-      .catch(function(error) {
-        vm.userData = {};
-        showAlert('Error', 'Por favor verifica los datos', false);
-      });
+        .then(function(data) {
+          vm.userData = {};
+          showAlert('Éxito', 'Contraseña actualizada exitosamente', true);
+        })
+        .catch(function(error) {
+          vm.userData = {};
+          showAlert('Error', 'Por favor verifica los datos', false);
+        });
     }
 
     function showAlert(title ,msg, success) {

@@ -5,31 +5,49 @@
     .module('app.login')
     .controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['$window', 'UserService'];
+  LoginCtrl.$inject = ['LoginService', 'UserService', '$state', '$ionicPopup'];
 
   /* @ngInject */
-  function LoginCtrl($window, UserService) {
+  function LoginCtrl(LoginService, UserService, $state, $ionicPopup) {
 
     var vm = this;
-    vm.param = {};
-    vm.user = {};
-    vm.param.idUser = 2;
+    vm.userCredentials = {};
+    vm.login = login;
 
     activate();
-    getUser();
+    clearLogin();
 
     function activate() {
       
     }
 
-    function getUser() {
-      UserService.getUser(vm.param)
-        .then(function(userData){
-          vm.user = userData.data;
-          console.log(vm.user);
-          console.log('set');
-          UserService.setCurrentUser(vm.user);
-        })  
+    function clearLogin() {
+      UserService.clearCurrentUser();
+    }
+
+    function login() {
+      LoginService.login(vm.userCredentials)
+        .then(function(data) {
+          vm.userCredential = {};
+          UserService.setCurrentUser(data.data);
+          $state.go('menu');
+        })
+        .catch(function(error) {
+          vm.userCredential = {};
+          showAlert('Error', 'Por favor ingrese de nuevo la información', false);
+        });
+    }
+
+    function showAlert(title ,msg, success) {
+      var alertPopup = $ionicPopup.alert({
+        title: title,
+        template: msg
+      });
+      if(success) {
+        alertPopup.then(function(res) {
+          $state.go('menu');
+        });
+      }
     }
 
   }

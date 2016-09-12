@@ -1,10 +1,15 @@
 <ion-view title="Nueva Visita Médica">
   <ion-content padding="true" class="has-header">
-  <h4>{{vm.client.name}} {{vm.client.lastName}} {{vm.param.reaction}} {{vm.param.coment}}</h4>
-    <a ui-sref="product({idClient:vm.param.idClient})" class="button button-stable  button-block icon ion-ios-plus-outline">Añadir Muestra</a>
+    <h4>{{vm.client.name}} {{vm.client.lastName}} {{vm.param.reaction}} {{vm.param.coment}}</h4>
+    <div ng-show="vm.client.ClientType.hasProducts">
+      <a ng-click="vm.addProduct()" class="button button-stable button-block icon ion-ios-plus-outline">Añadir Muestra</a>
+      <ion-list>
+        <ion-item ng-repeat="product in vm.param.ProductsPerVisits">product.Product.name - product.quantity</ion-item>
+      </ion-list>
+    </div>
     <h5>Reacción</h5>
     <form class="list">
-    <label class="item item-select" >
+      <label class="item item-select" >
         <span class="input-label">Seleccionar</span>
         <select ng-model="vm.param.FK_reaction">
           <option ng-repeat="reaction in vm.reactions" value="{{reaction.idReaction}}">{{reaction.description}}</option>

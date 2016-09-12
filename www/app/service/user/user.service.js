@@ -28,14 +28,14 @@
     }
 
     function setCurrentUser(user) {
-      localStorage.setItem("CurrentUser", JSON.stringify(user));
+      sessionStorage.setItem("CurrentUser", JSON.stringify(user));
     }
 
     function getCurrentUser() {
-      return JSON.parse(localStorage.getItem("CurrentUser"));
+      return JSON.parse(sessionStorage.getItem("CurrentUser"));
     }
 
-    function clearCurrentUser(argument) {
+    function clearCurrentUser() {
       setCurrentUser({});
     }
 

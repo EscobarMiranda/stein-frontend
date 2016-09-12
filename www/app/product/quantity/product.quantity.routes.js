@@ -10,7 +10,7 @@
 
     $stateProvider
       .state('product/quantity', {
-        url: '/product/quantity/:idProduct/:idClient',
+        url: '/product/quantity/:idProduct',
         templateUrl: 'app/product/quantity/quantity.html',
         controller: 'ProductQuantityCtrl as vm'
       });

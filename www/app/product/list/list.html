@@ -7,8 +7,8 @@
       </label>
     </form>
     <ion-list>
-      <ion-item collection-repeat="product in vm.products" ui-sref="product/quantity({idProduct:product.idProduct, idClient:vm.param.idClient})">
+      <ion-item collection-repeat="product in vm.products" ui-sref="product/quantity({idProduct:product.idProduct})">
         {{product.name}}
-    </ion-list>
-  </ion-content>
-</ion-view>
+      </ion-list>
+    </ion-content>
+  </ion-view>

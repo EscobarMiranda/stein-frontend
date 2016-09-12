@@ -11,8 +11,6 @@
   function ProductListCtrl($stateParams, ProductService) {
 
     var vm = this;
-    vm.param = {};
-    vm.param.idClient = $stateParams.idClient;
     vm.products = [];
     
     activate();

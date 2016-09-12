@@ -5,29 +5,29 @@
     .module('app.product')
     .controller('ProductQuantityCtrl', ProductQuantityCtrl);
 
-  ProductQuantityCtrl.$inject = ['ProductService', '$stateParams', '$ionicPopup'];
+  ProductQuantityCtrl.$inject = ['ProductService', 'ClientService', '$stateParams', '$ionicPopup'];
 
   /* @ngInject */
-  function ProductQuantityCtrl(ProductService, $stateParams, $ionicPopup) {
+  function ProductQuantityCtrl(ProductService, ClientService, $stateParams, $ionicPopup) {
 
     var vm = this;
     vm.param = {};
     vm.param.product = {};
     vm.param.product.FK_product = $stateParams.idProduct;
     vm.param.product.quantity;
-    vm.idClient = $stateParams.idClient;
+    vm.idClient = ClientService.getCurrentClient().FK_client;
+    vm.idClientType = ClientService.getCurrentClient().FK_visitType;
     vm.addProduct = addProduct;
     vm.showAlert = showAlert;
 
     activate();
 
     function activate() {
-      console.log(vm.param);
+    
     }
 
     function addProduct() {
       ProductService.addProduct(vm.param.product);
-      console.log(ProductService.getCurrentProducts());
       showAlert();
     }
 

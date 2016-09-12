@@ -10,7 +10,7 @@
 
     $stateProvider
       .state('product', {
-        url: '/product/:idClient',
+        url: '/product',
         templateUrl: 'app/product/list/list.html',
         controller: 'ProductListCtrl as vm'
       });
