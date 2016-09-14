@@ -27,6 +27,7 @@
     activate();
     getReactions();
     getClient();
+    getProducts();
 
     function activate() {
       
@@ -45,6 +46,10 @@
         .then(function(clientsData){
           vm.client = clientsData.data;
         })
+    }
+
+    function getProducts() {
+      vm.param.ProductsPerVisits = ProductService.getCurrentProducts();
     }
 
     function createVisit() {
