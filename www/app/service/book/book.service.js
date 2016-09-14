@@ -15,7 +15,7 @@
     function getFrequencyByUser(param) {
       var request = {
         method: 'GET',
-        url: RESOURCE.API_URL + 'Visit?month='+ param.month +'&type=' + param.idClientType,
+        url: RESOURCE.API_URL + 'Visit?month='+ param.month +'&type=' + param.idClientType +'&IdUser=' + param.idUser, 
         headers: {
           'Content-Type': 'application/json'
         }
