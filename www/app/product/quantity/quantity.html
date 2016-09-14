@@ -1,0 +1,13 @@
+<ion-view title="Acetaminofén">
+  <ion-content padding="true" class="has-header">
+    <h5>Cantidad</h5>
+    <form>
+      <label class="item item-input " id="username">
+        <span class="input-label">Cantidad de muestras</span>
+        <input ng-model="vm.param.product.quantity" type="number" placeholder="Ingrese una cantidad">
+      </label>
+    </form>
+    <div class="spacer"></div>
+    <a ng-click="vm.addProduct()" ui-sref="visit/new({idClient:vm.idClient,idClientType:vm.idClientType})" class="button button-stable  button-block">Ok</a>
+  </ion-content>
+</ion-view>

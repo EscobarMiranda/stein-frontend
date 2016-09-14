@@ -22,7 +22,7 @@
     getUser();
 
     function activate() {
-      
+
     }
 
     function getFrequency() {

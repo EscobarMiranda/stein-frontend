@@ -27,15 +27,15 @@
 
     function login() {
       LoginService.login(vm.userCredentials)
-      .then(function(data) {
-        vm.userCredential = {};
-        UserService.setCurrentUser(data.data);
-        $state.go('menu');
-      })
-      .catch(function(error) {
-        vm.userCredential = {};
-        showAlert('Error', 'Por favor ingrese de nuevo la información', false);
-      });
+        .then(function(data) {
+          vm.userCredential = {};
+          UserService.setCurrentUser(data.data);
+          $state.go('menu');
+        })
+        .catch(function(error) {
+          vm.userCredential = {};
+          showAlert('Error', 'Por favor ingrese de nuevo la información', false);
+        });
     }
 
     function showAlert(title ,msg, success) {

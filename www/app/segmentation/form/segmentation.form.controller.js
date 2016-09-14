@@ -42,14 +42,14 @@
 
     function saveAnswers() {
       AnswerService.saveAnswers(AnswerService.buildAnswers(vm.client.idClient, vm.answers))
-      .then(function(data) {
-        vm.answers = {};
-        showAlert('Éxito', 'Respuestas guardadas exitosamente', true);
-      })
-      .catch(function(error) {
-        vm.answers = {};
-        showAlert('Error', 'Ocurrió un error con la conexión', false);
-      });
+        .then(function(data) {
+          vm.answers = {};
+          showAlert('Éxito', 'Respuestas guardadas exitosamente', true);
+        })
+        .catch(function(error) {
+          vm.answers = {};
+          showAlert('Error', 'Ocurrió un error con la conexión', false);
+        });
     }
 
     function showAlert(title ,msg, success) {

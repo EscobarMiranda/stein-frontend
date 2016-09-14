@@ -11,13 +11,8 @@
     $stateProvider
       .state('product', {
         url: '/product',
-        templateUrl: 'app/product/list.html',
-        controller: 'ProductCtrl as vm'
-      })
-      .state('product/quantity', {
-        url: '/product/quantity',
-        templateUrl: 'app/product/quantity.html',
-        controller: 'ProductCtrl as vm'
+        templateUrl: 'app/product/list/list.html',
+        controller: 'ProductListCtrl as vm'
       });
 
   }

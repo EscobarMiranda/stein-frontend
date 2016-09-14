@@ -23,14 +23,14 @@
     function changePassword() {
       vm.userData.username = UserService.getCurrentUser().username;
       LoginService.changePassword(vm.userData)
-      .then(function(data) {
-        vm.userData = {};
-        showAlert('Éxito', 'Contraseña actualizada exitosamente', true);
-      })
-      .catch(function(error) {
-        vm.userData = {};
-        showAlert('Error', 'Por favor verifica los datos', false);
-      });
+        .then(function(data) {
+          vm.userData = {};
+          showAlert('Éxito', 'Contraseña actualizada exitosamente', true);
+        })
+        .catch(function(error) {
+          vm.userData = {};
+          showAlert('Error', 'Por favor verifica los datos', false);
+        });
     }
 
     function showAlert(title ,msg, success) {
