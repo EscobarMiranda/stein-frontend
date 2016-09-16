@@ -7,7 +7,7 @@
       </label>
     </form>
     <ion-list>
-      <ion-item collection-repeat="product in vm.products" ui-sref="product/quantity({idProduct:product.idProduct})">
+      <ion-item collection-repeat="product in vm.products" ui-sref="product/quantity({idProduct:product.idProduct, name:product.name})">
         {{product.name}}
       </ion-list>
     </ion-content>

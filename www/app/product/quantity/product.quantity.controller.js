@@ -14,6 +14,7 @@
     vm.param = {};
     vm.param.product = {};
     vm.param.product.FK_product = $stateParams.idProduct;
+    vm.param.product.name = $stateParams.name;
     vm.param.product.quantity;
     vm.idClient = ClientService.getCurrentClient().FK_client;
     vm.idClientType = ClientService.getCurrentClient().FK_visitType;
