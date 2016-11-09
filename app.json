@@ -1,0 +1,7 @@
+{
+  "name": "Stein",
+  "description": "A Ionic app for Stein",
+  "repository": "https://github.com/EscobarMiranda/stein-frontend",
+  "logo": "http://ionicframework.com/img/ionic-logo-blog.png",
+  "keywords": ["ionic", "stein"]
+}
